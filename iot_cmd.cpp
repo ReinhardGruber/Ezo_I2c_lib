@@ -2,18 +2,18 @@
 #include "iot_cmd.h"
 #include <Ezo_i2c_util.h>
 
-bool receive_command(String &string_buffer){
-    if (WebSerial.available()) {                           //if theres any characters in the UART buffer
-     
-        string_buffer = WebSerial.readString();             //get them until its a complete command
-        WebSerial.print("> ");                               //print whatever we received
-        WebSerial.println(string_buffer);
-        string_buffer.toUpperCase();                     //turn the command to uppercase for easier comparisions
-        string_buffer.trim();                            //remove all extra spaces and newlines
-        return true;
-    }
-    return false;
-}
+//bool receive_command(String &string_buffer){
+//    if (WebSerial.available()) {                           //if theres any characters in the UART buffer
+//    
+//      string_buffer = WebSerial.readString();             //get them until its a complete command
+//        WebSerial.print("> ");                               //print whatever we received
+//        WebSerial.println(string_buffer);
+//        string_buffer.toUpperCase();                     //turn the command to uppercase for easier comparisions
+//        string_buffer.trim();                            //remove all extra spaces and newlines
+//        return true;
+//    }
+//    return false;
+//}
 
 // determines how long we wait depending on the command
 void select_delay(const String &str) {
